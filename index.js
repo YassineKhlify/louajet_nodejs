@@ -3,9 +3,14 @@ const cors = require('cors');
 
 const app = express();
 const port = 3000;
+const IP_ADDRESS = '192.168.133.108'; // Replace with your desired IP address
 
 app.use(express.json());
-
+app.use(cors({
+    origin: 'http://localhost:58083', // Allow requests from this origin
+    methods: ['POST'], // Allow only POST requests
+    allowedHeaders: ['Content-Type'], // Allow only specific headers
+  }));
 const admin = require('firebase-admin');
 const serviceAccount = require('./loujet-2c6fe-firebase-adminsdk-v3zwh-42f072412f.json'); // Download this from your Firebase project settings
 
