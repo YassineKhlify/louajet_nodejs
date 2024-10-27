@@ -4,7 +4,6 @@ const serverless = require('serverless-http'); // Use serverless-http to handle 
 const admin = require('firebase-admin');
 require('dotenv').config();
 
-const admin = require('firebase-admin');
 
 admin.initializeApp({
   credential: admin.credential.cert({
