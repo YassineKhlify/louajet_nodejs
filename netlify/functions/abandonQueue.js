@@ -12,13 +12,6 @@ admin.initializeApp({
 const app = express();
 const db = admin.database();
 
-// Use CORS and JSON middleware
-app.use(express.json());
-app.use(cors({
-  origin: 'http://localhost:58083',
-  methods: ['POST'],
-  allowedHeaders: ['Content-Type'],
-}));
 
 // Define your abandonQueue endpoint
 app.post('/abandonQueue', async (req, res) => {
